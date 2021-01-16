@@ -1,0 +1,27 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "DistilledServer";
+
+package leader;
+
+service Leader {
+  rpc Write (WriteRequest) returns (WriteResponse);
+  rpc CatchUp (CatchUpRequest) returns (stream CatchUpData);
+}
+
+message WriteRequest {
+  bytes message = 1;
+}
+
+message WriteResponse {
+  int64 offset = 1;
+}
+
+message CatchUpRequest {
+  int64 offset = 1;
+}
+
+message CatchUpData {
+  int64 offset = 1;
+  bytes message = 2;
+}

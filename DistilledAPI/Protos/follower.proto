@@ -1,0 +1,23 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "DistilledAPI";
+
+package follower;
+
+service Follower {
+  rpc Read (ReadRequest) returns (Data);
+  rpc Subscribe (SubscribeRequest) returns (stream Data);
+}
+
+message ReadRequest {
+  int64 offset = 1;
+}
+
+message SubscribeRequest {
+  int64 offset = 1;
+}
+
+message Data {
+  int64 offset = 1;
+  bytes message = 2;
+}

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.808.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistilledServer", "DistilledServer\DistilledServer.csproj", "{3ECA9B32-65BB-48AB-8A86-E62D7132154A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistilledAPI", "DistilledAPI\DistilledAPI.csproj", "{A01EC670-A342-4981-8AEA-F109EA5AA319}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3ECA9B32-65BB-48AB-8A86-E62D7132154A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ECA9B32-65BB-48AB-8A86-E62D7132154A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ECA9B32-65BB-48AB-8A86-E62D7132154A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ECA9B32-65BB-48AB-8A86-E62D7132154A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A01EC670-A342-4981-8AEA-F109EA5AA319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A01EC670-A342-4981-8AEA-F109EA5AA319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A01EC670-A342-4981-8AEA-F109EA5AA319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A01EC670-A342-4981-8AEA-F109EA5AA319}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F54094B-51AC-4847-846A-A5BF4E5F6E5F}
+	EndGlobalSection
+EndGlobal

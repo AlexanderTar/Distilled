@@ -1,0 +1,39 @@
+version: '3'
+
+networks:
+  app-tier:
+    driver: bridge
+
+services:
+  etcd:
+    image: 'bitnami/etcd:latest'
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+      - ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379
+    ports:
+      - 2379:2379
+      - 2380:2380
+    networks:
+      - app-tier
+  distilled-server:
+    build: './DistilledServer'
+    environment:
+      - COORDINATOR_HOST=etcd
+      - COORDINATOR_PORT=2379
+    depends_on:
+      - "etcd"
+    networks:
+      - app-tier
+  distilled-api:
+    build: './DistilledAPI'
+    environment:
+      - COORDINATOR_HOST=etcd
+      - COORDINATOR_PORT=2379
+    depends_on:
+      - etcd
+      - distilled-server
+    ports:
+      - 5000:5000
+      - 5001:5001
+    networks:
+      - app-tier

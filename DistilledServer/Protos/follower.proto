@@ -1,0 +1,31 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "DistilledServer";
+
+package follower;
+
+service Follower {
+  rpc Replicate (ReplicationRequest) returns (google.protobuf.Empty);
+  rpc Read (ReadRequest) returns (Data);
+  rpc Subscribe (SubscribeRequest) returns (stream Data);
+}
+
+message ReplicationRequest {
+  int64 offset = 1;
+  bytes message = 2;
+}
+
+message ReadRequest {
+  int64 offset = 1;
+}
+
+message SubscribeRequest {
+  int64 offset = 1;
+}
+
+message Data {
+  int64 offset = 1;
+  bytes message = 2;
+}

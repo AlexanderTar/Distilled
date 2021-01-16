@@ -1,0 +1,17 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "DistilledAPI";
+
+package leader;
+
+service Leader {
+  rpc Write (WriteRequest) returns (WriteResponse);
+}
+
+message WriteRequest {
+  bytes message = 1;
+}
+
+message WriteResponse {
+  int64 offset = 1;
+}
